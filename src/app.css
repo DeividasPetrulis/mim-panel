@@ -1,0 +1,35 @@
+:root {
+  --bg: #0b0f0b;
+  --panel: #111a11;
+  --fg: #7dff7a;
+  --dim: #3f7a3d;
+  --accent: #ffcc33;
+  --px: 2px; /* one "pixel": mostly for borders */
+}
+
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'VT323', monospace;
+  font-size: 22px;
+}
+
+/* CRT scanlines overlay */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(transparent 0 2px, rgba(0, 0, 0, 0.25) 2px 3px);
+}
+
+
+/* Application wide classes */
+.box {
+  background: var(--panel);
+  border: var(--px) solid var(--fg);
+  padding: 8px
+  /*box-shadow: var(--px) var(--px) 0 var(--dim);*/
+}
